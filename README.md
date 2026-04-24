@@ -1,13 +1,21 @@
 # 🎓 Student Placement Readiness Predictor
 
-A robust Machine Learning web application designed to evaluate and predict student employability. By analyzing academic performance, technical expertise, and behavioral habits, the system categorizes students into three readiness levels: **Placement Ready**, **Needs Improvement**, or **At Risk**.
+A Machine Learning web application that predicts whether a student is Placement Ready, Needs Improvement, or At Risk, based on student performance metrics.
 
 ---
 
 ## 📊 Project Overview
 
 ### Problem Statement
-Many students lack a clear understanding of where they stand in the competitive job market. This project bridges that gap by using predictive analytics to provide data-driven insights into a student's placement status, helping them identify areas for growth before the actual recruitment season begins.
+Students are often unsure about their readiness for campus placements. Even though they have data like marks, coding practice, and study habits, there is no simple way to understand their overall preparation.
+
+This project builds a machine learning model that uses student performance data to predict whether a student is:
+
+Placement Ready
+Needs Improvement
+At Risk
+
+It helps students get a clear idea of their current preparation level and status.
 
 ### Tech Stack
 * **Language:** Python
