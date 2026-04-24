@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Placement Predictor</title>
+</head>
+<body>
+
+<h2>Student Placement Readiness Predictor</h2>
+
+<form action="/predict" method="post">
+
+    <!-- CATEGORICAL -->
+    Branch:
+    <select name="branch">
+        <option value="CSE">CSE</option>
+        <option value="ECE">ECE</option>
+        <option value="EEE">EEE</option>
+        <option value="MECH">MECH</option>
+        <option value="IT">IT</option>
+    </select><br><br>
+
+    Gender:
+    <select name="gender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select><br><br>
+
+    College Type:
+    <select name="college_type">
+        <option value="Tier1">Tier1</option>
+        <option value="Tier2">Tier2</option>
+        <option value="Tier3">Tier3</option>
+    </select><br><br>
+
+    Study Mode:
+    <select name="study_mode">
+        <option value="Self">Self</option>
+        <option value="Coaching">Coaching</option>
+        <option value="Mixed">Mixed</option>
+    </select><br><br>
+
+    <!-- NUMERICAL -->
+    CGPA: <input type="text" name="cgpa"><br><br>
+    DSA Problems Solved: <input type="text" name="dsa_problems_solved"><br><br>
+    Mock Test Score: <input type="text" name="mock_test_score"><br><br>
+    Projects Count: <input type="text" name="projects_count"><br><br>
+    Resume Score: <input type="text" name="resume_score"><br><br>
+    Study Hours Per Day: <input type="text" name="study_hours_per_day"><br><br>
+    Attendance Percentage: <input type="text" name="attendance_percentage"><br><br>
+    Sleep Hours: <input type="text" name="sleep_hours"><br><br>
+    Stress Level (1–10): <input type="text" name="stress_level"><br><br>
+    Internship (0 or 1): <input type="text" name="internship"><br><br>
+    Core Subjects Confidence (1–5): <input type="text" name="core_subjects_confidence"><br><br>
+    Core Subjects Covered Count: <input type="text" name="core_subjects_covered_count"><br><br>
+
+    <input type="submit" value="Predict">
+
+</form>
+
+<h3>{{ prediction_text }}</h3>
+
+</body>
+</html>
