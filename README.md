@@ -12,7 +12,9 @@ Students are often unsure about their readiness for campus placements. Even thou
 This project builds a machine learning model that uses student performance data to predict whether a student is:
 
 Placement Ready
+---
 Needs Improvement
+---
 At Risk
 
 It helps students get a clear idea of their current preparation level and status.
