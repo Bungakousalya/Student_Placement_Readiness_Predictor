@@ -1,133 +1,80 @@
-# 🎓 Student Placement Readiness Predictor
+🎓 Student Placement Readiness Predictor
 
-A Machine Learning web application that predicts whether a student is **Placement Ready, Needs Improvement, or At Risk** based on based on student performance metrics.
-The project is built using **Flask, Scikit-learn, and deployed on AWS Elastic Beanstalk**.
+A Machine Learning web application that predicts whether a student is Placement Ready, Needs Improvement, or At Risk, based on student performance metrics.
 
-## 📊 Problem Statement
+The project is built using Flask, Scikit-learn, and deployed on AWS Elastic Beanstalk.
 
-Students often struggle to understand their placement readiness.  
-This project predicts placement readiness using ML based on:
+📊 Problem Statement
 
-🟦 1. Academic Background Features
+Students often struggle to understand their placement readiness.
+This project uses machine learning to evaluate students based on academic performance, coding skills, and behavioral patterns to predict their placement status.
 
-These describe the student’s college and academic environment.
-
+📌 Features Used
+🟦 Academic Background
 branch → Engineering branch (CSE, ECE, etc.)
-👉 Shows technical background and specialization.
-college_type → Type of college (Tier1 / Tier2 / Tier3)
-👉 Represents academic environment quality.
-study_mode → Self-study / Coaching / Mixed
-👉 Indicates how the student prepares academically.
-🟩 2. Academic Performance Features
-
-These measure how well the student is performing in studies.
-
+college_type → Tier of college (Tier1 / Tier2 / Tier3)
+study_mode → Learning method (Self / Coaching / Mixed)
+🟩 Academic Performance
 cgpa → Overall academic score
-👉 Core indicator of academic strength.
-attendance_percentage → Class attendance rate
-👉 Shows discipline and consistency.
-mock_test_score → Performance in practice tests
-👉 Indicates exam readiness.
-core_subjects_confidence → Confidence in core subjects (1–5 scale)
-👉 Reflects conceptual understanding.
+attendance_percentage → Attendance level
+mock_test_score → Mock test performance
+core_subjects_confidence → Confidence in core subjects (1–5)
 core_subjects_covered_count → Number of core subjects completed
-👉 Shows syllabus completion level.
-🟨 3. Coding & Technical Skills
-
-These measure programming and problem-solving ability.
-
+🟨 Coding & Technical Skills
 dsa_problems_solved → Number of DSA problems solved
-👉 Measures coding practice and problem-solving skill.
 projects_count → Number of projects built
-👉 Shows practical application skills.
-internship → Whether student has internship experience (0/1)
-👉 Indicates real-world exposure.
-🟧 4. Behavioral & Study Habits
-
-These describe how the student studies and manages time/stress.
-
-study_hours_per_day → Daily study time
-👉 Shows dedication and effort.
-sleep_hours → Average sleep per day
-👉 Impacts focus and performance.
-stress_level → Stress rating (1–10)
-👉 Indicates mental pressure.
-🟥 5. Derived / Engineered Features (IMPORTANT ⭐)
-
-These are created by you (feature engineering) — this is what makes your project stand out.
-
-consistency_score → Balance of study + attendance + practice
-👉 Measures regularity.
-effort_score → Study effort intensity
-👉 Combines consistency and study hours.
-stress_sleep_ratio → Stress vs sleep balance
-👉 Indicates mental health imbalance.
-burnout_score → Risk of burnout
-👉 Combines stress + sleep + consistency.
-practice_growth_rate → Learning progress rate
-👉 Measures coding improvement speed.
-prep_index → Final readiness score (very important)
-👉 Overall combined indicator of placement readiness.
-🟪 6. Target Variable
-placement_status → Final output 
+internship → Internship experience (0/1)
+🟧 Behavioral & Study Habits
+study_hours_per_day → Daily study hours
+sleep_hours → Average sleep duration
+stress_level → Stress level (1–10)
+🟥 Engineered Features (Feature Engineering ⭐)
+consistency_score → Study consistency level
+effort_score → Overall effort intensity
+stress_sleep_ratio → Balance between stress and sleep
+burnout_score → Burnout risk indicator
+practice_growth_rate → Learning improvement rate
+prep_index → Final readiness score
+🎯 Target Variable
+placement_status
 Placement Ready ✅
 Needs Improvement ⚠️
 At Risk ❌
+🧠 Machine Learning Approach
+✔ Models Used
+Logistic Regression
+Random Forest Classifier
+Decision Tree
+✔ Best Model
+Logistic Regression / Random Forest (based on evaluation)
+⚙️ Tech Stack
+Python
+Flask
+Pandas, NumPy
+Scikit-learn
+Imbalanced-learn (SMOTE)
+HTML/CSS (Frontend)
+AWS Elastic Beanstalk (Deployment)
+🏗️ Project Workflow
+Data Collection
+Data Preprocessing
+Feature Engineering
+Encoding & Scaling
+Handling Imbalanced Data (SMOTE)
+Model Training
+Model Evaluation
+Flask Web Application
+AWS Deployment
+☁️ Deployment
 
-
----
-
-## 🧠 Machine Learning Approach
-
-### ✔ Models Used:
-- Logistic Regression
-- Random Forest Classifier
-- Decision Tree
-
-### ✔ Best Model:
-- Logistic Regression / Random Forest (based on evaluation)
----
-## ⚙️ Tech Stack
-
-- Python
-- Flask
-- Pandas, NumPy
-- Scikit-learn
-- Imbalanced-learn (SMOTE)
-- HTML (Frontend)
-- AWS Elastic Beanstalk (Deployment)
-
----
-
-## 🏗️ Project Workflow
-
-1. Data Collection
-2. Data Preprocessing
-3. Feature Engineering
-4. Encoding & Scaling
-5. Handling Imbalanced Data (SMOTE)
-6. Model Training
-7. Model Evaluation
-8. Flask Web App
-9. AWS Deployment
-
----
-
-## ☁️ Deployment
-
-Deployed using **AWS Elastic Beanstalk**
+The application is deployed on AWS Elastic Beanstalk.
 
 Steps:
-- Flask app containerized logically
-- Model serialized using pickle
-- Deployed using EB CLI
-- Hosted as a scalable web service
-
----
-
-## 📂 Project Structure
-
-
+Trained ML model serialized using Pickle
+Flask application configured for production
+Deployed using EB CLI
+Hosted as a scalable cloud web service
+📁 Project Structure
 Student_Placement_Readiness_Predictor/
 │── application.py
 │── train.py
@@ -137,38 +84,22 @@ Student_Placement_Readiness_Predictor/
 │── templates/
 │── static/
 │── data/
+📈 Results
+Accuracy: ~86% (Random Forest)
+SMOTE applied to handle class imbalance
+Improved recall for minority classes
+⚠️ Challenges Faced
+Handling imbalanced dataset
+Avoiding data leakage during SMOTE
+Feature engineering for behavioral patterns
+Missing value (NaN) handling issues
+AWS deployment configuration
+🚀 Future Improvements
+Add deep learning models
+Improve UI design
+Add explainable AI (SHAP/LIME)
+Build student recommendation system
+👩‍💻 Author
 
-
----
-
-## 📈 Results
-
-- Accuracy: ~86% (Random Forest)
-- Balanced dataset using SMOTE
-- Improved recall for minority classes
-
----
-
-## ⚠️ Challenges Faced
-
-- Handling imbalanced dataset
-- Preventing data leakage during SMOTE
-- Feature engineering for behavioral data
-- NaN issues during training
-- Deployment configuration on AWS Elastic Beanstalk
-
----
-
-## 🚀 Future Improvements
-
-- Add deep learning model
-- Improve UI design
-- Add student recommendation system
-- Add explainable AI (SHAP values)
-
----
-
-## 👩‍💻 Author
-
-**Kousalya Bunga**  
-B.Tech CSE | ML & Full Stack Developer 
+Kousalya Bunga
+B.Tech CSE | Machine Learning & Full Stack Developer
